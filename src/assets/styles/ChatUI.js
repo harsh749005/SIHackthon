@@ -60,7 +60,9 @@ export const styles = {
       flex: '1',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      flexDirection:"column",
+      gap:"20px"
     },
     welcomeText: {
       textAlign: 'center'

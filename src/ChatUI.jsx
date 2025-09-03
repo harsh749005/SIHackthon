@@ -39,17 +39,17 @@ export default function ChatUI() {
           borderBottomWidth: "1px",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "25px" }}>
+        <div style={{ display: "flex", alignItems: "center", }}>
           <img src={Logo} width={55} height={55} />
           <div>
             <span
               style={{
                 fontFamily: "Space Grotesk",
-                fontSize: "22px",
+                fontSize: "16px",
                 fontWeight: "bold",
               }}
             >
-              SAHYOG
+              Smart Assistant
             </span>
           </div>
         </div>
@@ -155,6 +155,21 @@ export default function ChatUI() {
         <div style={styles.mainContent}>
           {/* Chat Content */}
           <div style={styles.chatContent}>
+          <div style={{ display: "flex", flexDirection:"column",alignItems: "center", }}>
+          <img src={Logo} width={75} height={75} />
+          <div>
+            <span
+              style={{
+                fontFamily: "poppins",
+                fontSize: "30px",
+                fontWeight: "bold",
+                color:"#6b7280"
+              }}
+            >
+              Smart Assistant
+            </span>
+          </div>
+          </div>
             <div style={styles.welcomeText}>
               <h1 style={styles.mainTitle}>What's on your mind today?</h1>
               <p style={styles.subtitle}>Hey there! What can I do for you?</p>
