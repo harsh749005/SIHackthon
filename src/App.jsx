@@ -1,12 +1,12 @@
 import './App.css'
-import ChatGPTUI from './ChatGPTUI'
+import ChatUI from './ChatUI'
 import './index.css'
 import './output.css'
 
 function App() {
   return (
     <>
-    <ChatGPTUI/>
+    <ChatUI/>
     </>
   )
 }
