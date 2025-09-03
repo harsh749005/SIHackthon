@@ -3,8 +3,11 @@ import {
   Plus, 
   Search, 
   Database,
-  AudioLines
+  AudioLines,
+  Phone,
+  Image
 } from 'lucide-react';
+import Logo from './assets/logo.png'
 import { styles } from './assets/styles/ChatUI';
 
 export default function ChatUI() {
@@ -32,14 +35,38 @@ export default function ChatUI() {
 
   return (
     <div style={styles.container}>
+      <div style={{height:"60px",display:"flex",alignItems:"center",justifyContent:"space-between",paddingRight:"40px",paddingLeft:"40px",backgroundColor:"transparent",borderColor:"#e5e5e5",borderBottomWidth:'1px',}}>
+                <div style={{display:"flex",alignItems:"center",gap:"25px"}}>
+            <img src={Logo} width={55} height={55}/>
+          <div>
+            <span style={{fontFamily:"Space Grotesk",fontSize:"22px",fontWeight:"bold"}}>SAHYOG</span>
+          </div>
+        </div>
+        <div style={{width:"max-content",display:"flex",alignItems:"center",gap:"25px"}}>
+<div style={{display:"flex",alignItems:"center",gap:"15px",padding:'8px 20px 8px 20px',boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',cursor:"pointer",borderColor:"#e5e5e5",borderRadius:"50px",borderWidth:"1px",}}>
+
+        <div style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <Image size={18} color='#6c757d' />
+        </div>
+        <span style={{fontSize:"14px"}}>Search by image</span>
+</div>
+          <div style={{boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',cursor:"pointer",borderColor:"#e5e5e5",width:"40px",height:"40px",borderRadius:"50px",borderWidth:"1px",display:"flex",alignItems:"center",justifyContent:"center"}}>
+ {/* backgroundColor:"#3cf04b" color='#fff' */}
+<Phone size={18} color='#6c757d' />
+        </div>
+        </div>
+      </div>
+      <div style={{display:"flex",flexGrow:1}}>
+
       {/* Sidebar */}
       <div style={styles.sidebar}>
         {/* Header */}
-        <div style={styles.header}>
+        {/* <div style={styles.header}>
+            <img src={Logo} width={150} height={150}/>
           <div>
-            <span style={styles.logo}>ChatSphere</span>
+            <span style={styles.logo}>SAHYOG</span>
           </div>
-        </div>
+        </div> */}
 
         {/* Sidebar Buttons */}
         <div style={styles.sidebarButtons}>
@@ -181,6 +208,8 @@ export default function ChatUI() {
           </div>
         </div>
       </div>
+      </div>
+
     </div>
   );
 }

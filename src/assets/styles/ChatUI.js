@@ -3,6 +3,7 @@ export const styles = {
       height: '100vh',
       backgroundColor: '#ffffff',
       display: 'flex',
+      flexDirection:"column",
       fontFamily: 'Space Grotesk, sans-serif'
     },
     sidebar: {
@@ -15,7 +16,8 @@ export const styles = {
     header: {
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'space-between',
+      justifyContent: 'center',
+      flexDirection:"column",
       padding: '16px',
       borderBottom: '1px solid #e5e5e5'
     },
