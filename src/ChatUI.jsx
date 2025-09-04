@@ -179,7 +179,7 @@ export default function ChatUI() {
                   styles.sidebarButton.backgroundColor;
                 e.target.style.transform = "none";
               }} style={styles.sidebarButton}>
-                    <p style={{fontFamily:"poppins",fontWeight:""}}>
+                    <p style={{fontFamily:"poppins",backgroundColor:"transparent"}}>
 
                     {chats.chat}
                     </p>
