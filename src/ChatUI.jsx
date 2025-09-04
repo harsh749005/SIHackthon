@@ -201,7 +201,7 @@ export default function ChatUI() {
                 alignItems: "center",
               }}
             >
-              <img src={Logo} width={75} height={75} />
+              <img src={Logo} width={130} height={130} />
               {/* <div>
                 <span
                   style={{
