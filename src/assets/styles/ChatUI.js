@@ -118,12 +118,12 @@ export const styles = {
     inputWrapper: {
       backgroundColor: '#ffffff',
       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-      borderRadius: '50px',
+      borderRadius: '18px',
       border: '1px solid #d1d5db',
       padding: '12px 16px',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '12px'
+      // display: 'flex',
+      // alignItems: 'center',
+      // gap: '12px'
     },
     addButton: {
       width: '32px',
@@ -157,9 +157,9 @@ export const styles = {
     },
     iconButton: {
       padding: '8px',
-      backgroundColor: 'transparent',
+      backgroundColor: '#0968bd',
       border: 'none',
-      borderRadius: '8px',
+      borderRadius: '50px',
       cursor: 'pointer',
       transition: 'background-color 0.2s ease',
       display: 'flex',
@@ -170,7 +170,7 @@ export const styles = {
       display: 'flex',
       alignItems: 'center',
       gap: '8px',
-      flexWrap: 'wrap'
+      flexWrap: 'wrap',
     },
     tag: {
       display: 'flex',
@@ -178,10 +178,12 @@ export const styles = {
       gap: '4px',
       backgroundColor: '#e3f2fd',
       color: '#1565c0',
-      padding: '4px 8px',
+      padding: '4px 10px',
       borderRadius: '16px',
       fontSize: '12px',
-      fontWeight: '500'
+      fontWeight: '500',
+      width:"max-content"
+
     },
     tagRemove: {
       cursor: 'pointer',

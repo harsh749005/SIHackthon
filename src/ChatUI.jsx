@@ -23,6 +23,17 @@ export default function ChatUI() {
   const removeTag = (tagToRemove) => {
     setSelectedTags(selectedTags.filter((tag) => tag !== tagToRemove));
   };
+  const recentsCats = [
+    {
+      chat: "What is ground water level in Vadodara ? ",
+    },
+    {
+      chat: "Ground water level in Vodadara is critical",
+    },
+    {
+      chat: "How Image processing work ?",
+    },
+  ];
 
   return (
     <div style={styles.container}>
@@ -39,17 +50,18 @@ export default function ChatUI() {
           borderBottomWidth: "1px",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <img src={Logo} width={55} height={55} />
           <div>
             <span
               style={{
-                fontFamily: "Space Grotesk",
+                fontFamily: "poppins",
                 fontSize: "16px",
                 fontWeight: "bold",
+                color:"#0968bd"
               }}
             >
-              Smart Assistant
+              SMART ASSISTANT
             </span>
           </div>
         </div>
@@ -148,6 +160,33 @@ export default function ChatUI() {
               <Plus size={18} color="#6c757d" />
               <span>New Chat</span>
             </div>
+            <div style={{marginTop:"20px"}}>
+              <h1 style={{ fontWeight: "bold",fontSize:"22px" }}>Recent Chats</h1>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "10px",
+                  marginTop:"10px"
+                }}
+              >
+                {recentsCats.map((chats, index) => (
+                  <div key={index}               onMouseEnter={(e) => {
+                Object.assign(e.target.style, styles.sidebarButtonHover);
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor =
+                  styles.sidebarButton.backgroundColor;
+                e.target.style.transform = "none";
+              }} style={styles.sidebarButton}>
+                    <p style={{fontFamily:"poppins",fontWeight:""}}>
+
+                    {chats.chat}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -155,21 +194,27 @@ export default function ChatUI() {
         <div style={styles.mainContent}>
           {/* Chat Content */}
           <div style={styles.chatContent}>
-          <div style={{ display: "flex", flexDirection:"column",alignItems: "center", }}>
-          <img src={Logo} width={75} height={75} />
-          <div>
-            <span
+            <div
               style={{
-                fontFamily: "poppins",
-                fontSize: "30px",
-                fontWeight: "bold",
-                color:"#6b7280"
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
               }}
             >
-              Smart Assistant
-            </span>
-          </div>
-          </div>
+              <img src={Logo} width={75} height={75} />
+              {/* <div>
+                <span
+                  style={{
+                    fontFamily: "poppins",
+                    fontSize: "30px",
+                    fontWeight: "bold",
+                    color: "#0968bd",
+                  }}
+                >
+                  SMART ASSISTANT
+                </span>
+              </div> */}
+            </div>
             <div style={styles.welcomeText}>
               <h1 style={styles.mainTitle}>What's on your mind today?</h1>
               <p style={styles.subtitle}>Hey there! What can I do for you?</p>
@@ -189,10 +234,10 @@ export default function ChatUI() {
                       e.target.style.backgroundColor = "#f3f4f6";
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = "transparent";
+                      e.target.style.backgroundColor = "#f3f4f6";
                     }}
                   >
-                    <Database size={16} color="#3b82f6" />
+                    <Database size={16} color="#3b82f6"  />
                     <span>Live Data</span>
                   </button>
                 </div>
@@ -201,6 +246,10 @@ export default function ChatUI() {
               {/* Input Container */}
               <div style={styles.inputWrapper}>
                 {/* Add Button */}
+              <div style={{display:"flex",gap:"18px",flexDirection:"column"}}>
+
+                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:"12px"}}>
+
                 <button
                   style={styles.addButton}
                   onClick={handleAddClick}
@@ -220,7 +269,7 @@ export default function ChatUI() {
                 <div style={{ flex: "1" }}>
                   <div style={styles.tagsContainer}>
                     {/* Selected Tags */}
-                    {selectedTags.map((tag, index) => (
+                    {/* {selectedTags.map((tag, index) => (
                       <div key={index} style={styles.tag}>
                         <Database size={12} color="#1565c0" />
                         <span>{tag}</span>
@@ -237,7 +286,7 @@ export default function ChatUI() {
                           ×
                         </span>
                       </div>
-                    ))}
+                    ))} */}
 
                     {/* Input */}
                     <input
@@ -259,15 +308,37 @@ export default function ChatUI() {
                   <button
                     style={styles.iconButton}
                     onMouseEnter={(e) => {
-                      e.target.style.backgroundColor = "#f3f4f6";
+                      e.target.style.backgroundColor = "#4da9ff";
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = "transparent";
+                      e.target.style.backgroundColor = "#0968bd";
                     }}
                   >
-                    <AudioLines size={18} color="#6c757d" />
+                    <AudioLines size={18} color="#FFF" style={{backgroundColor:"transparent"}} />
                   </button>
                 </div>
+                </div>
+  {selectedTags.map((tag, index) => (
+                      <div key={index} style={styles.tag}>
+                        <Database size={12} color="#1565c0" />
+                        <span>{tag}</span>
+                        <span
+                          style={styles.tagRemove}
+                          onClick={() => removeTag(tag)}
+                          onMouseEnter={(e) => {
+                            e.target.style.color = "#c62828";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.target.style.color = "#1565c0";
+                          }}
+                        >
+                          ×
+                        </span>
+                      </div>
+                    ))}
+                              
+                </div>
+
               </div>
             </div>
           </div>
